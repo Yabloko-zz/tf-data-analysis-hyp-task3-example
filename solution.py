@@ -6,7 +6,7 @@ chat_id = 38897891 # Ваш chat ID, не меняйте название пер
 
 def solution(x: np.array, y: np.array) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
     
-    from scipy.stats import ttest_ind
-    st, pval = ttest_ind(a=x, b=y, equal_var=True)
-    res = pval <= 0.05
+    from scipy.stats import mannwhitneyu
+    _, pval = mannwhitneyu(x, y, alternative='two-sided')
+    res = pval < 0.05
     return res
