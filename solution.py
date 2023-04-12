@@ -8,5 +8,5 @@ def solution(x: np.array, y: np.array) -> bool: # Одна или две выб�
     
     from scipy.stats import mannwhitneyu
     _, pval = mannwhitneyu(x, y, alternative='two-sided')
-    res = pval < 0.05
+    res = pval < 0.03
     return res
